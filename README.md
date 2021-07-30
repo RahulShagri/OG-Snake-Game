@@ -5,4 +5,4 @@ Maneuver a snake in its burrow and earn points while avoiding the snake itself a
 Game developed purely on python using the [Dear PyGui Framework](https://github.com/hoffstadt/DearPyGui).
 
 <h2>:video_game: Demo</h2>
- ![A demonstration of the snake game](Resources/demo.gif)
+![A demonstration of the snake game](resources/demo.gif)
