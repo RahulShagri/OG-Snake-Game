@@ -16,8 +16,8 @@ snake_length_flag = 1  # Flag to check if the snake should grow or not. 1=grow 0
 fix_snake_length = None
 
 apple = None  # Apple item in DPG
-apple_points = []   # Every unit coordinate of the apple rectangle. If the snake passes through any of these coordinate,
-                    # then the apple changes location
+apple_points = []   # Every unit coordinate of the apple rectangle. If the snake passes through any of these
+# coordinate, then the apple changes location
 
 snake_speed = None
 snake_color = [0, 255, 0]
@@ -255,7 +255,8 @@ def reset_stats():
 
 
 def reset_settings():
-    global snake, snake_color, apple, apple_color, burrow, burrow_color, snake_speed, fix_snake_length, snake_length_flag
+    global snake, snake_color, apple, apple_color, burrow, burrow_color, snake_speed, fix_snake_length
+    global snake_length_flag
 
     dpg.configure_item(item=snake, color=[0, 255, 0])
     dpg.configure_item(item=apple, color=[255, 0, 0], fill=[255, 0, 0])
@@ -307,7 +308,7 @@ def key_release_handler(sender, app_data):
             snake_direction = 1
             slither_change_data.append([head_point, snake_direction])
 
-    if app_data == 38  or app_data == 87:
+    if app_data == 38 or app_data == 87:
         # North
         if head_direction != 4 and head_direction != 2:
             snake_direction = 2
@@ -319,7 +320,7 @@ def key_release_handler(sender, app_data):
             snake_direction = 3
             slither_change_data.append([head_point, snake_direction])
 
-    if app_data == 40 or app_data ==83:
+    if app_data == 40 or app_data == 83:
         # South
         if head_direction != 2 and head_direction != 4:
             snake_direction = 4
@@ -331,7 +332,7 @@ def main_window_setup():
     global fix_snake_length, score, highest_score
 
     dpg.setup_viewport()
-    dpg.set_viewport_title("Snakey")
+    dpg.set_viewport_title("Snake Game")
     dpg.configure_viewport(0, x_pos=0, y_pos=0, width=750, height=645)
 
     with dpg.window(pos=[0, 0], autosize=True, no_collapse=True, no_resize=True, no_close=True, no_move=True,
@@ -363,7 +364,8 @@ def main_window_setup():
 
                     burrow = dpg.draw_rectangle(pmin=[0, 0], pmax=[50, 50], color=[33, 33, 33], fill=[33, 33, 33])
                     snake = dpg.draw_polyline(points=get_points_from_data(slither_data), thickness=1, color=[0, 255, 0])
-                    apple = dpg.draw_rectangle(pmin=[0, 0], pmax=[2, 2], thickness=0, color=[255, 0, 0], fill=[255, 0, 0])
+                    apple = dpg.draw_rectangle(pmin=[0, 0], pmax=[2, 2], thickness=0, color=[255, 0, 0],
+                                               fill=[255, 0, 0])
 
             with dpg.child(autosize_x=True, autosize_y=True):
                 with dpg.group():
