@@ -2,6 +2,7 @@ import dearpygui.dearpygui as dpg
 import threading
 import time
 import random
+import webbrowser
 from theme_settings import *
 
 dpg.setup_registries()  # Registries for mouse and keyboard press events
@@ -269,6 +270,10 @@ def reset_settings():
     snake_length_flag = 1
 
 
+def open_help():
+    webbrowser.open("https://github.com/RahulShagri/OG-Snake-Game")
+
+
 def key_release_handler(sender, app_data):
     # Function listening to key release events. Arrow keys change snake direction and keeps a track of the point when
     # the key event occurs
@@ -296,22 +301,22 @@ def key_release_handler(sender, app_data):
         # South
         head_point[1] -= 1
 
-    if app_data == 37 and head_direction != 3 and head_direction != 1:
+    if app_data == 37 or app_data == 65 and head_direction != 3 and head_direction != 1:
         # West
         snake_direction = 1
         slither_change_data.append([head_point, snake_direction])
 
-    if app_data == 38 and head_direction != 4 and head_direction != 2:
+    if app_data == 38  or app_data == 87 and head_direction != 4 and head_direction != 2:
         # North
         snake_direction = 2
         slither_change_data.append([head_point, snake_direction])
 
-    if app_data == 39 and head_direction != 1 and head_direction != 3:
+    if app_data == 39 or app_data == 68 and head_direction != 1 and head_direction != 3:
         # East
         snake_direction = 3
         slither_change_data.append([head_point, snake_direction])
 
-    if app_data == 40 and head_direction != 2 and head_direction != 4:
+    if app_data == 40 or app_data ==83 and head_direction != 2 and head_direction != 4:
         # South
         snake_direction = 4
         slither_change_data.append([head_point, snake_direction])
@@ -390,7 +395,7 @@ def main_window_setup():
                     dpg.add_dummy()
                     dpg.add_separator()
                     dpg.add_dummy()
-                    dpg.add_button(label="Help", width=-1, height=30)
+                    dpg.add_button(label="Help", width=-1, height=30, callback=open_help)
 
     dpg.add_key_release_handler(callback=key_release_handler)
 
