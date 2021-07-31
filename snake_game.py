@@ -301,25 +301,29 @@ def key_release_handler(sender, app_data):
         # South
         head_point[1] -= 1
 
-    if app_data == 37 or app_data == 65 and head_direction != 3 and head_direction != 1:
+    if app_data == 37 or app_data == 65:
         # West
-        snake_direction = 1
-        slither_change_data.append([head_point, snake_direction])
+        if head_direction != 3 and head_direction != 1:
+            snake_direction = 1
+            slither_change_data.append([head_point, snake_direction])
 
-    if app_data == 38  or app_data == 87 and head_direction != 4 and head_direction != 2:
+    if app_data == 38  or app_data == 87:
         # North
-        snake_direction = 2
-        slither_change_data.append([head_point, snake_direction])
+        if head_direction != 4 and head_direction != 2:
+            snake_direction = 2
+            slither_change_data.append([head_point, snake_direction])
 
-    if app_data == 39 or app_data == 68 and head_direction != 1 and head_direction != 3:
+    if app_data == 39 or app_data == 68:
         # East
-        snake_direction = 3
-        slither_change_data.append([head_point, snake_direction])
+        if head_direction != 1 and head_direction != 3:
+            snake_direction = 3
+            slither_change_data.append([head_point, snake_direction])
 
-    if app_data == 40 or app_data ==83 and head_direction != 2 and head_direction != 4:
+    if app_data == 40 or app_data ==83:
         # South
-        snake_direction = 4
-        slither_change_data.append([head_point, snake_direction])
+        if head_direction != 2 and head_direction != 4:
+            snake_direction = 4
+            slither_change_data.append([head_point, snake_direction])
 
 
 def main_window_setup():
