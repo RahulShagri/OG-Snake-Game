@@ -334,6 +334,8 @@ def main_window_setup():
     dpg.setup_viewport()
     dpg.set_viewport_title("Snake Game")
     dpg.configure_viewport(0, x_pos=0, y_pos=0, width=750, height=645)
+    dpg.set_viewport_max_height(645)
+    dpg.set_viewport_max_width(750)
 
     with dpg.window(pos=[0, 0], autosize=True, no_collapse=True, no_resize=True, no_close=True, no_move=True,
                     no_title_bar=True) as main_window:
