@@ -1,5 +1,7 @@
 # :snake: Snake Game
 
+![A demonstration of the snake game](resources/demo.gif)
+
 Maneuver a snake in its burrow and earn points while avoiding the snake itself and the walls of the snake burrow. The snake grows when it eats an apple by default which can be disabled in the settings tab where you can also find all the other customization options.
 
 Game developed purely on python using the [Dear PyGui Framework](https://github.com/hoffstadt/DearPyGui).
@@ -23,7 +25,3 @@ Game developed purely on python using the [Dear PyGui Framework](https://github.
 6. Hit the `Restart` button to restart the game without resetting the highest score. Hit the `Reset Stats` button to reset all the scores.
 
 7. Use the `Fix snake length` checkbox to stop the snake from growing when it eats an apple.
-
-<h2>:video_game: Demo</h2>
-
-![A demonstration of the snake game](resources/demo.gif)
